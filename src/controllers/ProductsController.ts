@@ -2,7 +2,8 @@ import { Request, Response } from 'express';
 import ProductsService from '../services/ProductsService';
 
 class ProductController extends ProductsService {
-  public static controllerGetAllProducts = async (req: Request, res: Response) => {
+  public static controllerGetAllProducts = async (req: Request, res: Response)
+  : Promise<Response> => {
     const products = await super.getAllProducts();
     return res.status(200).json(products);
   };
