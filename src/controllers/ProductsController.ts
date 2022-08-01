@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import ProductsService from '../services/ProductsService';
+import { ProductsService } from '../services';
 
 class ProductController extends ProductsService {
   public static controllerGetAllProducts = async (req: Request, res: Response)
@@ -8,7 +8,7 @@ class ProductController extends ProductsService {
     return res.status(200).json(products);
   };
 
-  public static controllerNewProduct = async (req: Request, res: Response) => {
+  public static controllerNewProduct = async (req: Request, res: Response): Promise<Response> => {
     const product = await super.newProduct(req.body);
     return res.status(201).json(product);
   };

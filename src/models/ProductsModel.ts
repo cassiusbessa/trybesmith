@@ -15,7 +15,6 @@ class ProductsModel {
     const query = 'INSERT INTO Trybesmith.Products SET ?';
     const [newProduct]: [ResultSetHeader, FieldPacket[]] = await this.productsConnection
       .query(query, product);
-    console.log(newProduct);
     const forgedProduct = {
       id: newProduct.insertId,
       ...product,

@@ -3,7 +3,7 @@ interface Iuser {
   username: string;
   classe: string;
   level: number;
-  password: string;
+  password?: string;
 
 }
 
