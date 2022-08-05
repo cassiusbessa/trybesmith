@@ -12,6 +12,12 @@ class ProductController extends ProductsService {
     const product = await super.newProduct(req.body);
     return res.status(201).json(product);
   };
+
+  public static controllerGetAllOrders = async (req: Request, res: Response): Promise<Response> => {
+    console.log('entro a getAllOrders');
+    const orders = await super.serviceGetAllOrders();
+    return res.status(200).json(orders);
+  };
 }
 
 export default ProductController;
