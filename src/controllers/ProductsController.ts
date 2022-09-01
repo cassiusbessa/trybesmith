@@ -14,7 +14,6 @@ class ProductController extends ProductsService {
   };
 
   public static controllerGetAllOrders = async (req: Request, res: Response): Promise<Response> => {
-    console.log('entro a getAllOrders');
     const orders = await super.serviceGetAllOrders();
     return res.status(200).json(orders);
   };
